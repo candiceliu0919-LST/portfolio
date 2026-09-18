@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="data:," />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="KANKAN, VOL.30 — Opening visual benchmark." />
+    <title>KANKAN, VOL.30 — Opening Benchmark</title>
+    <link rel="preload" href="./public/fonts/kankan-voice/lxgw-wenkai-regular-site-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./src/styles/opening-benchmark.css?rev=09" />
+    <link rel="stylesheet" href="./src/styles/chinese-voice.css?rev=02" />
+    <link rel="stylesheet" href="./src/styles/final-assembly.css?rev=06" />
+  </head>
+  <body>
+    <main class="opening" data-opening>
+      <div class="opening__sticky">
+        <div class="opening__atmosphere" aria-hidden="true">
+          <div class="opening__wash opening__wash--umber"></div>
+          <div class="opening__wash opening__wash--blue"></div>
+          <div class="opening__grain"></div>
+        </div>
+
+        <figure class="memory" data-memory>
+          <div class="memory__mat">
+            <img
+              class="memory__image"
+              src="./public/assets/v1/sitong-1996.webp"
+              alt="小时候的 Kankan"
+              width="1157"
+              height="1056"
+            />
+          </div>
+          <figcaption>1996 / before she had a website</figcaption>
+        </figure>
+
+        <div class="threshold" aria-hidden="true">
+          <span class="threshold__line"></span>
+        </div>
+
+        <figure class="present" data-present>
+          <div class="present__image-wrap">
+            <img
+              class="present__image"
+              src="./public/assets/image-pass-v1/opening-current-blue.webp"
+              alt="现在的 Kankan"
+              width="2200"
+              height="3298"
+            />
+          </div>
+        </figure>
+
+        <p class="interruption" data-interruption>
+          等一下，刚才是不是从我小时候穿过来了。
+        </p>
+
+        <section class="cover" aria-label="KANKAN, VOL.30 cover">
+          <p class="cover__eyebrow">A PERSON, STILL LOADING.</p>
+          <h1 class="cover__title" aria-label="KANKAN, volume 30">
+            <span class="cover__kankan" aria-hidden="true">
+              <span class="cover__name-line">KAN</span>
+              <span class="cover__name-line">KAN,</span>
+            </span>
+            <span class="cover__volume">VOL.30</span>
+          </h1>
+          <button class="cover__objection" type="button" data-objection aria-live="polite">
+            本人暂时没有异议。
+          </button>
+          <button
+            class="cover__continue"
+            type="button"
+            data-scroll-to-lobby
+            aria-label="继续下滑，进入四个世界"
+          >
+            继续下滑 ↓
+          </button>
+        </section>
+
+        <div class="opening__cue" aria-hidden="true">
+          <span>MOVE THROUGH</span>
+          <i></i>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./src/interactions/site-audio.js?rev=07"></script>
+    <script type="module" src="./src/review/opening-benchmark.js?rev=13"></script>
+  </body>
+</html>

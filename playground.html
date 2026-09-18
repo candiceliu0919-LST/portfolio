@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="data:," />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KANKAN, VOL.30 — A quiet room that may or may not respond when touched."
+    />
+    <title>Playground / Do Not Press — KANKAN, VOL.30</title>
+    <link rel="preload" href="./public/fonts/kankan-voice/lxgw-wenkai-regular-site-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./src/styles/playground.css?rev=25" />
+    <link rel="stylesheet" href="./src/styles/chinese-voice.css?rev=02" />
+    <link rel="stylesheet" href="./src/styles/production-color.css?rev=01" />
+    <link rel="stylesheet" href="./src/styles/playground-final.css?rev=01" />
+    <link rel="stylesheet" href="./src/styles/image-pass-v1.css?rev=01" />
+  </head>
+  <body data-color-world="playground">
+    <a class="skip-link" href="#playground-content">跳到 Playground</a>
+
+    <header class="playground-nav">
+      <a href="./five-worlds-lobby.html?rev=consolidation-v1" aria-label="返回 Worlds">
+        <span aria-hidden="true">←</span> WORLDS
+      </a>
+      <span>KANKAN, VOL.30 / WORLD 04</span>
+      <span>PLAYGROUND / ACTIVE</span>
+    </header>
+
+    <main class="playground-field" id="playground-content" data-playground-field>
+      <div class="field-grain" aria-hidden="true"></div>
+
+      <header class="field-heading">
+        <p>04 / PLAYGROUND</p>
+        <h1 aria-label="Playground">
+          <span>PLAY</span>
+          <em data-ground-word>GROUND</em>
+        </h1>
+      </header>
+
+      <button
+        class="quiet-mark"
+        type="button"
+        aria-label="填满这个圆"
+        disabled
+        data-quiet-mark
+      >○</button>
+      <section class="press-control" aria-label="不要按控制" data-press-control>
+        <button type="button" data-do-not-press>DO NOT PRESS</button>
+        <p aria-live="polite" data-press-response></p>
+        <button class="visitor-message-entrance" type="button" hidden data-message-entrance>
+          LEAVE ONE LINE
+        </button>
+      </section>
+
+      <section class="visitor-trace-control" hidden data-trace-control>
+        <button type="button" aria-expanded="false" data-trace-prompt>LEAVE A TRACE?</button>
+        <div class="visitor-trace-picker" hidden data-trace-picker>
+          <button type="button" aria-label="留下圆形痕迹" data-trace-mark="○">○</button>
+          <button type="button" aria-label="留下叉形痕迹" data-trace-mark="×">×</button>
+          <button type="button" aria-label="留下笑脸痕迹" data-trace-mark=":)">:)</button>
+          <button type="button" aria-label="留下星形痕迹" data-trace-mark="✦">✦</button>
+          <button type="button" aria-label="留下脚印痕迹" data-trace-mark="👣">👣</button>
+        </div>
+        <p class="visitor-trace-status" aria-live="polite" data-trace-status></p>
+      </section>
+
+      <div class="visitor-trace-layer" aria-hidden="true" data-trace-layer></div>
+
+      <button
+        class="event-trigger"
+        type="button"
+        aria-label="这里好像有东西"
+        hidden
+        data-event-trigger
+      >
+        <span aria-hidden="true" data-trigger-glyph>?</span>
+      </button>
+
+      <section
+        class="event-stage"
+        aria-live="polite"
+        aria-hidden="true"
+        hidden
+        inert
+        data-event-stage
+      >
+        <header class="event-stage__header">
+          <span data-event-coordinate></span>
+          <button type="button" aria-label="收起当前事件" data-event-close>CLOSE ×</button>
+        </header>
+        <div class="event-stage__body" data-event-body></div>
+      </section>
+
+      <p class="non-event" aria-live="polite" hidden data-non-event></p>
+
+      <div class="field-edge" aria-hidden="true">
+        <i></i>
+      </div>
+    </main>
+
+    <script type="module" src="./src/interactions/site-audio.js?rev=07"></script>
+    <script type="module" src="./src/review/playground-v04.js?rev=03"></script>
+  </body>
+</html>
