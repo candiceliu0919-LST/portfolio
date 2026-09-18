@@ -1,0 +1,55 @@
+/* KANKAN, VOL.30 — final assembly connections only. */
+
+.cover__continue {
+  position: absolute;
+  right: clamp(1.25rem, 3vw, 2.75rem);
+  bottom: clamp(4.6rem, 9vh, 5.8rem);
+  padding: 0.82rem 1.05rem 0.78rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #d2b98f;
+  font-family: var(--font-kankan-cn-system, Arial, sans-serif);
+  font-size: clamp(0.88rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.cover__continue:hover,
+.cover__continue:focus-visible {
+  color: #ead9ba;
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+  transform: translateY(-2px);
+}
+
+.lobby__serious-link {
+  position: absolute;
+  z-index: 20;
+  right: 4vw;
+  bottom: clamp(0.75rem, 1.6vh, 1.2rem);
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgb(228 216 197 / 24%);
+  color: rgb(228 216 197 / 54%);
+  font: 700 0.54rem/1 Arial, sans-serif;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.lobby__serious-link:hover,
+.lobby__serious-link:focus-visible { border-color: currentColor; color: rgb(228 216 197 / 90%); }
+
+@media (max-width: 760px) {
+  .cover__continue { right: 20px; bottom: 8.5vh; padding: 0.9rem 1.12rem 0.86rem; }
+  .lobby__serious-link { position: relative; right: auto; bottom: auto; display: block; width: fit-content; margin: 3.8rem 0 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover__continue { transition: none; }
+  .lobby__serious-link { transition: none; }
+}

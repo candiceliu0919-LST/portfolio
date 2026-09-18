@@ -1,0 +1,233 @@
+/* Narrative clarity pass: same room, quieter copy, more lived evidence. */
+
+.lobby__intro {
+  width: 44vw;
+}
+
+.lobby__intro h1 {
+  max-width: 11em;
+  font-size: clamp(32px, 3.35vw, 52px);
+  line-height: 0.98;
+}
+
+.lobby__intro span {
+  top: 15.5vh;
+  left: 0;
+}
+
+/* 01 — one leak: two visibly different Kankans colliding. */
+.world--contradictions .world__number,
+.world__title--contradictions {
+  z-index: 4;
+}
+
+.contradiction-evidence {
+  position: absolute;
+  z-index: 1;
+  inset: -1vh 0 0 0;
+  pointer-events: none;
+}
+
+.contradiction-image {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  padding: 4px 4px 18px;
+  background: #d7c9aa;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.34);
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), filter 280ms ease;
+}
+
+.contradiction-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.76) contrast(1.05) brightness(0.88);
+}
+
+.contradiction-image i {
+  position: absolute;
+  left: 7px;
+  bottom: 4px;
+  color: #30261f;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: clamp(6px, 0.52vw, 8px);
+  font-style: normal;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.contradiction-image--reason {
+  top: 0;
+  right: 1.2vw;
+  width: 12vw;
+  height: 14vh;
+  transform: rotate(3deg);
+}
+
+.contradiction-image--reason img {
+  object-position: 43% 68%;
+}
+
+.contradiction-image--feeling {
+  right: 0;
+  bottom: 1.2vh;
+  width: 10.5vw;
+  height: 14.5vh;
+  background: #c3b498;
+  transform: rotate(-4deg);
+}
+
+.contradiction-image--feeling img {
+  object-position: 50% 33%;
+}
+
+.world--contradictions:hover .contradiction-image--reason,
+.world--contradictions:focus-visible .contradiction-image--reason {
+  transform: translate(-10px, -7px) rotate(-1deg);
+}
+
+.world--contradictions:hover .contradiction-image--feeling,
+.world--contradictions:focus-visible .contradiction-image--feeling {
+  transform: translate(12px, 8px) rotate(1deg);
+}
+
+/* 02 — material carries the meaning; the label no longer explains it twice. */
+.keeping-label {
+  padding-bottom: 12px;
+}
+
+/* 04 — a real subject inside the diagnostic, with only three signals. */
+.manual-diagnostic {
+  top: 2.7vh;
+  padding-bottom: 10px;
+}
+
+.manual-diagnostic__subject {
+  position: relative;
+  display: block !important;
+  height: 10.5vh;
+  min-height: 72px;
+  margin: 0 0 10px;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 0 !important;
+}
+
+.manual-diagnostic__subject::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(11, 30, 30, 0.62), transparent 38%),
+    linear-gradient(0deg, rgba(11, 30, 30, 0.5), transparent 50%);
+}
+
+.manual-diagnostic__subject img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 31%;
+  filter: saturate(0.68) contrast(1.03) brightness(0.8);
+}
+
+.manual-diagnostic__subject small {
+  position: absolute;
+  z-index: 2;
+  left: 7px;
+  bottom: 6px;
+  margin: 0;
+  color: rgba(220, 230, 222, 0.7);
+  font-size: 0.9em;
+  opacity: 1;
+}
+
+.manual-diagnostic > b {
+  margin-bottom: 8px;
+}
+
+/* 05 — one real, strange fragment peeks out; the switch carries the joke. */
+.playground-peek {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0.4vw;
+  display: block;
+  width: 7.5vw;
+  height: 10vh;
+  overflow: hidden;
+  border-radius: 48% 52% 45% 55%;
+  opacity: 0.62;
+  transform: rotate(8deg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  transition: opacity 240ms ease, transform 340ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.playground-peek::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg, transparent 25%, rgba(27, 38, 36, 0.5));
+}
+
+.playground-peek img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  filter: saturate(0.62) contrast(1.08) brightness(0.72);
+}
+
+.world--playground:hover .playground-peek,
+.world--playground:focus-visible .playground-peek {
+  opacity: 0.9;
+  transform: translateY(-7px) rotate(3deg);
+}
+
+@media (max-width: 760px) {
+  .lobby__intro {
+    width: 100%;
+    min-height: 205px;
+  }
+
+  .lobby__intro h1 {
+    max-width: none;
+    font-size: clamp(32px, 9vw, 40px);
+  }
+
+  .lobby__intro span {
+    top: 151px;
+    right: auto;
+    left: 0;
+  }
+
+  .contradiction-image--reason {
+    width: 31vw;
+    height: 128px;
+  }
+
+  .contradiction-image--feeling {
+    width: 28vw;
+    height: 132px;
+  }
+
+  .manual-diagnostic {
+    top: 29px;
+  }
+
+  .manual-diagnostic__subject {
+    height: 105px;
+  }
+
+  .world--manual {
+    height: 355px;
+  }
+
+  .playground-peek {
+    top: 12px;
+    right: 0;
+    width: 24vw;
+    height: 112px;
+  }
+}

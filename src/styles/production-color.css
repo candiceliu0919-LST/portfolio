@@ -1,0 +1,309 @@
+/*
+  KANKAN, VOL.30 — PRODUCTION COLOR GRAMMAR / DF
+  D builds the room. F brings the mess.
+
+  This layer changes color roles only. Page composition, typography, imagery,
+  filters, texture, spacing and motion remain owned by each World stylesheet.
+*/
+
+:root {
+  --kankan-ink: #1b1a17;
+  --kankan-ink-deep: #121310;
+  --kankan-charcoal: #282821;
+  --kankan-bone: #e4d8c5;
+  --kankan-paper: #eee8dd;
+  --kankan-paper-deep: #ded5c7;
+  --kankan-pencil: #69655e;
+  --kankan-pencil-light: #aaa398;
+  --kankan-tobacco: #87684d;
+
+  /* Provenance references, never a fixed brand palette. */
+  --found-mulberry: #763a48;
+  --found-candid-green: #526657;
+  --found-window-blue: #607d91;
+  --found-hotpot-amber: #a1653d;
+}
+
+/* WORLDS LOBBY — production reference for Controlled Mess. */
+body[data-color-world="lobby"] {
+  --ink: var(--kankan-ink);
+  --paper: var(--kankan-bone);
+  --paper-dim: var(--kankan-pencil-light);
+  --wine: #24231f;
+  --moss: #292a26;
+  --rust: var(--kankan-tobacco);
+  --blue: var(--kankan-pencil);
+  background: var(--kankan-ink);
+  color: var(--kankan-bone);
+}
+
+body[data-color-world="lobby"] .lobby {
+  background: var(--kankan-ink);
+  color: var(--kankan-bone);
+}
+
+body[data-color-world="lobby"] .lobby__atmosphere {
+  background:
+    radial-gradient(ellipse at 47% 63%, rgba(228, 216, 197, 0.042), transparent 33%),
+    linear-gradient(126deg, #1c1a17 0%, #24211c 51%, #181715 100%);
+}
+
+body[data-color-world="lobby"] .lobby__wash--wine {
+  background: radial-gradient(circle, rgba(119, 115, 107, 0.13), transparent 64%);
+}
+
+body[data-color-world="lobby"] .lobby__wash--moss {
+  background: radial-gradient(circle, rgba(119, 115, 107, 0.14), transparent 63%);
+}
+
+body[data-color-world="lobby"] .lobby__beam {
+  background: linear-gradient(112deg, transparent 31%, rgba(228, 216, 197, 0.045) 48%, transparent 63%);
+}
+
+body[data-color-world="lobby"] .lobby__intro p,
+body[data-color-world="lobby"] .world__number,
+body[data-color-world="lobby"] .lobby__status { color: #918b81; }
+
+body[data-color-world="lobby"] .lobby__intro span { color: #969087; }
+
+body[data-color-world="lobby"] .world__title,
+body[data-color-world="lobby"] .world__title--contradictions i { color: var(--kankan-bone); }
+
+body[data-color-world="lobby"] .world::after { color: #9a9388; }
+body[data-color-world="lobby"] .world:focus-visible { outline-color: #c8c0b3; }
+
+body[data-color-world="lobby"] .contradiction-image,
+body[data-color-world="lobby"] .kept-photo { background: #d5cbb9; }
+
+body[data-color-world="lobby"] .contradiction-image--feeling { background: #c5baa7; }
+body[data-color-world="lobby"] .contradiction-image i { color: #3b3832; }
+
+body[data-color-world="lobby"] .keeping-label {
+  background: #e0d7c8;
+  color: #24231f;
+}
+
+body[data-color-world="lobby"] .world__title--keeping,
+body[data-color-world="lobby"] .world--keeping::after { color: #24231f; }
+
+body[data-color-world="lobby"] .manual-diagnostic {
+  border-color: rgba(198, 191, 178, 0.21);
+  background: rgba(26, 26, 23, 0.78);
+  color: #aaa499;
+}
+
+body[data-color-world="lobby"] .manual-diagnostic__bar { background: rgba(228, 216, 197, 0.07); }
+body[data-color-world="lobby"] .manual-diagnostic b { color: #dcd4c7; }
+
+body[data-color-world="lobby"] .manual-diagnostic > span:not(.manual-diagnostic__bar) {
+  border-top-color: rgba(228, 216, 197, 0.09);
+}
+
+body[data-color-world="lobby"] .manual-diagnostic__subject::after {
+  background:
+    linear-gradient(90deg, rgba(27, 26, 23, 0.68), transparent 38%),
+    linear-gradient(0deg, rgba(27, 26, 23, 0.54), transparent 50%);
+}
+
+body[data-color-world="lobby"] .manual-diagnostic__subject small { color: #cec6b8; }
+body[data-color-world="lobby"] .playground-peek::after {
+  background: linear-gradient(125deg, transparent 25%, rgba(27, 26, 23, 0.54));
+}
+
+body[data-color-world="lobby"] .playground-switch b { color: #999187; }
+body[data-color-world="lobby"] .world--contradictions .world__number,
+body[data-color-world="lobby"] .world--contradictions::after { color: #ad7652; }
+body[data-color-world="lobby"] .world--keeping .world__number,
+body[data-color-world="lobby"] .world--keeping::after { color: #ad7652; }
+body[data-color-world="lobby"] .manual-diagnostic__bar i {
+  background: #718378;
+  box-shadow: none;
+}
+body[data-color-world="lobby"] .manual-diagnostic em { color: #9a7658; }
+body[data-color-world="lobby"] .world--playground::before { border-color: rgba(118, 58, 72, 0.42); }
+body[data-color-world="lobby"] .playground-switch i {
+  border-color: rgba(161, 101, 61, 0.72);
+  background: radial-gradient(circle at 38% 35%, #bd835e, #8b4f31 64%, #3b2921);
+  box-shadow: 0 0 20px rgba(161, 101, 61, 0.18);
+}
+
+/* 01 / CONTRADICTIONS — archive room with faded judgements, not a burgundy theme. */
+body[data-color-world="contradictions"] {
+  --ink: var(--kankan-charcoal);
+  --paper: var(--kankan-paper);
+  --paper-warm: var(--kankan-bone);
+  --wine: #211f1b;
+  --wine-deep: var(--kankan-ink-deep);
+  --wine-lift: rgba(70, 66, 58, 0.76);
+  --ghost-ink: #68635b;
+  --submerged-ink: #8c857a;
+  --secondary-ink: #c8bdad;
+  --primary-ivory: var(--kankan-bone);
+}
+
+body[data-color-world="contradictions"] .contradictions-nav {
+  border-bottom-color: rgba(228, 216, 197, 0.11);
+  background: rgba(18, 19, 16, 0.94);
+  color: rgba(228, 216, 197, 0.56);
+}
+
+body[data-color-world="contradictions"] .accumulation {
+  background: #211f1b;
+}
+
+body[data-color-world="contradictions"] .accumulation__frame {
+  background:
+    radial-gradient(ellipse 72% 86% at 76% 22%, rgba(82, 76, 65, 0.28), transparent 67%),
+    linear-gradient(118deg, var(--kankan-ink-deep) 0%, #211f1b 52%, #29251f 100%);
+}
+
+body[data-color-world="contradictions"] .accumulation__title .coordinate,
+body[data-color-world="contradictions"] .truth .coordinate { color: rgba(228, 216, 197, 0.4); }
+
+body[data-color-world="contradictions"] .accumulation__attitude { color: rgba(228, 216, 197, 0.78); }
+body[data-color-world="contradictions"] .accumulation__continue {
+  border-left-color: rgba(228, 216, 197, 0.11);
+  background: rgba(18, 19, 16, 0.22);
+  color: rgba(228, 216, 197, 0.48);
+}
+
+body[data-color-world="contradictions"] .incomplete {
+  background: var(--kankan-paper);
+  color: var(--kankan-charcoal);
+}
+
+body[data-color-world="contradictions"] .incomplete::before { background: rgba(40, 40, 33, 0.09); }
+body[data-color-world="contradictions"] .incomplete__coordinate { color: rgba(40, 40, 33, 0.42); }
+body[data-color-world="contradictions"] .incomplete__closing span { color: rgba(40, 40, 33, 0.6); }
+body[data-color-world="contradictions"] .incomplete__footer { color: rgba(40, 40, 33, 0.46); }
+body[data-color-world="contradictions"] .incomplete__footer a { color: rgba(40, 40, 33, 0.82); }
+
+/* 02 / KEEPING — the existing archive is already DF; align only semantic room values. */
+body[data-color-world="keeping"] {
+  --archive-deep: var(--kankan-ink);
+  --archive-paper: var(--kankan-paper);
+  --archive-paper-deep: var(--kankan-paper-deep);
+  --archive-ink: var(--kankan-charcoal);
+  --archive-ink-mid: #6e6b62;
+  --archive-ink-ghost: #c8bfb1;
+  --archive-rust: #85503f;
+}
+
+/* 04 / USER MANUAL — an archive report with found-color system evidence. */
+body[data-color-world="manual"] {
+  --manual-paper: var(--kankan-paper);
+  --manual-paper-deep: var(--kankan-paper-deep);
+  --manual-ink: var(--kankan-charcoal);
+  --manual-ink-soft: rgba(40, 40, 33, 0.56);
+  --manual-wine: var(--kankan-ink);
+  --manual-wine-light: var(--kankan-bone);
+  --manual-acid: #8b927e;
+}
+
+body[data-color-world="manual"] .manual-nav {
+  border-bottom-color: rgba(228, 216, 197, 0.2);
+  background: rgba(27, 26, 23, 0.94);
+  color: rgba(228, 216, 197, 0.66);
+}
+
+body[data-color-world="manual"] .report-cover,
+body[data-color-world="manual"] .report-cover__ink,
+body[data-color-world="manual"] .manual-footer { background: var(--kankan-ink); }
+
+body[data-color-world="manual"] .report-cover__seal { border-color: rgba(135, 104, 77, 0.62); }
+body[data-color-world="manual"] .report-cover__seal strong { border-block-color: rgba(135, 104, 77, 0.42); }
+body[data-color-world="manual"] .finding--issue {
+  background: var(--kankan-ink);
+  color: var(--kankan-bone);
+}
+
+body[data-color-world="manual"] .finding--issue .finding__header,
+body[data-color-world="manual"] .diagnostic-trigger,
+body[data-color-world="manual"] .diagnostic-result { border-color: rgba(228, 216, 197, 0.28); }
+
+body[data-color-world="manual"] .finding--issue .finding__header,
+body[data-color-world="manual"] .issue-statement__code,
+body[data-color-world="manual"] .diagnostic-result span,
+body[data-color-world="manual"] .diagnostic-result i { color: rgba(228, 216, 197, 0.52); }
+
+body[data-color-world="manual"] .finding--issue .finding__header > :nth-child(2),
+body[data-color-world="manual"] .diagnostic-trigger { color: var(--kankan-bone); }
+
+body[data-color-world="manual"] .diagnostic-result i {
+  border-color: rgba(82, 102, 87, 0.72);
+  color: #8d9d8c;
+}
+
+/* 04 / PLAYGROUND — archive room interrupted by earned, muted found color. */
+body[data-color-world="playground"] {
+  --play-wine: var(--kankan-ink);
+  --play-wine-deep: var(--kankan-ink-deep);
+  --play-ivory: var(--kankan-bone);
+  --play-rose: #ae7180;
+  --play-dust: var(--kankan-pencil-light);
+  --play-line: rgba(228, 216, 197, 0.2);
+  background: var(--kankan-ink);
+  color: var(--kankan-bone);
+}
+
+body[data-color-world="playground"] .playground-nav {
+  border-bottom-color: rgba(228, 216, 197, 0.13);
+  background: rgba(18, 19, 16, 0.94);
+  color: rgba(228, 216, 197, 0.56);
+}
+
+body[data-color-world="playground"] .playground-field {
+  background:
+    linear-gradient(90deg, transparent 49.94%, rgba(228, 216, 197, 0.045) 50%, transparent 50.06%),
+    var(--kankan-ink);
+}
+
+body[data-color-world="playground"] .field-grain { mix-blend-mode: soft-light; }
+
+body[data-color-world="playground"] .event-trigger {
+  border-color: rgba(228, 216, 197, 0.2);
+  background: rgba(18, 19, 16, 0.16);
+}
+
+body[data-color-world="playground"] .event-trigger:hover { border-color: rgba(228, 216, 197, 0.72); }
+
+body[data-color-world="playground"] .event-stage,
+body[data-color-world="playground"] .event-stage.event-stage--quiet {
+  border-color: rgba(228, 216, 197, 0.18);
+  background: rgba(27, 26, 23, 0.98);
+  box-shadow: 0 2rem 6rem rgba(18, 19, 16, 0.26);
+}
+
+body[data-color-world="playground"] .event-stage.event-stage--system {
+  background: rgba(18, 19, 16, 0.985);
+}
+
+body[data-color-world="playground"] .question-event__choices button:hover,
+body[data-color-world="playground"] .question-event__choices button:focus-visible,
+body[data-color-world="playground"] .question-event__choices button.is-selected,
+body[data-color-world="playground"] .event-actions button:hover,
+body[data-color-world="playground"] .event-actions button:focus-visible,
+body[data-color-world="playground"] .event-actions button.is-selected,
+body[data-color-world="playground"] .animal-event__animals button:hover,
+body[data-color-world="playground"] .animal-event__animals button:focus-visible,
+body[data-color-world="playground"] .animal-event__animals button.is-selected {
+  background: var(--kankan-bone);
+  color: var(--kankan-ink-deep);
+}
+
+body[data-color-world="playground"] .visitor-trace-status,
+body[data-color-world="playground"] .visitor-note-own strong,
+body[data-color-world="playground"] .press-control .visitor-message-entrance::after {
+  color: var(--found-hotpot-amber);
+}
+
+body[data-color-world="playground"] .message-18__choices button { filter: saturate(0.82); }
+
+@media (prefers-contrast: more) {
+  body[data-color-world="lobby"] .world__number,
+  body[data-color-world="lobby"] .lobby__intro span,
+  body[data-color-world="playground"] .playground-nav,
+  body[data-color-world="contradictions"] .contradictions-nav {
+    color: var(--kankan-bone);
+  }
+}

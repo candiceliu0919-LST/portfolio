@@ -1,0 +1,370 @@
+/* KANKAN, VOL.30 — Five Worlds image pass V1.
+   Real material enters the existing compositions without changing their architecture. */
+
+/* Lobby: same density, stronger real evidence. */
+.world--contradictions .contradiction-image--reason img {
+  object-position: 50% 30%;
+}
+
+.world--contradictions .contradiction-image--feeling img {
+  object-position: 50% 56%;
+}
+
+.world--keeping .kept-photo--book img {
+  object-position: 50% 48%;
+}
+
+/* Contradictions: two images coexist as evidence, never as a literal A/B comparison. */
+.contradiction-photo {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(244, 234, 219, 0.15);
+  background: #2b1118;
+  box-shadow: 0 1.8rem 4rem rgba(15, 5, 8, 0.2);
+  pointer-events: none;
+}
+
+.contradiction-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contradiction-photo--surface {
+  top: 12%;
+  left: 43%;
+  width: min(15vw, 14rem);
+  height: min(43vh, 27rem);
+  opacity: min(
+    clamp(0, calc((var(--truth-progress) - 0.05) * 4.5), 0.62),
+    clamp(0.15, calc((0.72 - var(--truth-progress)) * 2.6), 0.62)
+  );
+  transform: translate3d(0, calc((1 - var(--truth-progress)) * 1.2rem), 0) rotate(-0.8deg);
+}
+
+.contradiction-photo--surface img {
+  object-position: 50% 29%;
+}
+
+.contradiction-photo--remainder {
+  right: 3.5vw;
+  bottom: 5.5%;
+  width: min(16vw, 15rem);
+  height: min(30vh, 20rem);
+  opacity: clamp(0, calc((var(--truth-progress) - 0.55) * 3), 0.78);
+  transform: translate3d(0, calc((1 - var(--truth-progress)) * 1rem), 0) rotate(1.1deg);
+}
+
+.contradiction-photo--remainder img {
+  object-position: 50% 54%;
+}
+
+/* Brain: one quiet piece of observed life, away from the WHY? focal event. */
+.brain-observation-fragment {
+  position: absolute;
+  z-index: 1;
+  top: 49%;
+  left: 8vw;
+  width: min(22vw, 20rem);
+  aspect-ratio: 1;
+  margin: 0;
+  overflow: hidden;
+  background: #d5d4cf;
+  box-shadow: 0 1.4rem 3rem rgba(12, 16, 16, 0.15);
+  transform: rotate(-0.7deg);
+}
+
+.brain-observation-fragment img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.has-brain-motion .brain-observation-fragment.is-visible {
+  transform: rotate(-0.7deg) translateY(0);
+}
+
+/* Things Worth Keeping: the promised scans become the drawer's physical contents. */
+.diary-fragment {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  overflow: hidden;
+  background: #d8d0bf;
+  box-shadow: 0 1.1rem 2.4rem rgba(38, 32, 26, 0.17);
+}
+
+.diary-fragment img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.diary-fragment--01 {
+  top: -4.5rem;
+  left: 0;
+  width: 36%;
+  aspect-ratio: 0.92;
+  transform: rotate(-2.4deg);
+}
+
+.diary-fragment--02 {
+  top: -6.5rem;
+  left: 29%;
+  width: 42%;
+  aspect-ratio: 0.87;
+  transform: rotate(0.8deg);
+}
+
+.diary-fragment--03 {
+  top: -2.8rem;
+  right: 0;
+  width: 34%;
+  aspect-ratio: 0.94;
+  transform: rotate(2.1deg);
+}
+
+.received-material {
+  position: absolute;
+  z-index: 1;
+  left: 4.5vw;
+  bottom: 7vh;
+  width: min(22vw, 21rem);
+  aspect-ratio: 1;
+  margin: 0;
+  overflow: hidden;
+  background: #d9d0c0;
+  box-shadow: 0 1.6rem 3rem rgba(40, 35, 29, 0.14);
+  transform: rotate(-2.2deg);
+}
+
+.received-material img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Playground: discoveries are spatial events, not a gallery or modal sequence. */
+.photo-discovery {
+  position: absolute;
+  z-index: 42;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 280ms ease, transform 440ms cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.photo-discovery.is-visible {
+  opacity: 1;
+}
+
+.photo-discovery.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.photo-discovery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-discovery__close {
+  position: absolute;
+  z-index: 2;
+  top: 0.55rem;
+  right: 0.55rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0.55rem;
+  border: 0;
+  background: rgba(21, 22, 20, 0.82);
+  color: #eee8dc;
+  cursor: pointer;
+  font: 700 0.52rem/1 Arial, sans-serif;
+  letter-spacing: 0.12em;
+}
+
+.photo-discovery__close:hover,
+.photo-discovery__close:focus-visible {
+  background: #eee8dc;
+  color: #20211f;
+}
+
+.photo-discovery--corner {
+  top: 12vh;
+  right: 5vw;
+  width: min(21vw, 17rem);
+  aspect-ratio: 1;
+  transform: translate3d(1.5rem, -1rem, 0) rotate(1.3deg);
+}
+
+.photo-discovery--corner.is-visible {
+  transform: rotate(1.3deg);
+}
+
+.photo-discovery--found-print {
+  bottom: 7vh;
+  left: 7vw;
+  width: min(28vw, 22rem);
+  aspect-ratio: 0.58;
+  padding: 0.55rem 0.55rem 1.8rem;
+  background: #e7dfcf;
+  box-shadow: 0 1.8rem 4rem rgba(26, 27, 24, 0.22);
+  transform: translate3d(-1.5rem, 1rem, 0) rotate(-1.8deg);
+}
+
+.photo-discovery--found-print.is-visible {
+  transform: rotate(-1.8deg);
+}
+
+.photo-discovery--under-interface {
+  z-index: 8;
+  top: 22vh;
+  left: 43vw;
+  width: min(24vw, 19rem);
+  aspect-ratio: 1;
+  transform: scale(0.94) rotate(0.9deg);
+}
+
+.photo-discovery--under-interface.is-visible {
+  transform: rotate(0.9deg);
+}
+
+.photo-discovery--side-crop {
+  top: 10vh;
+  right: -2.5vw;
+  width: min(43vw, 37rem);
+  height: 76vh;
+  transform: translateX(3rem);
+}
+
+.photo-discovery--side-crop.is-visible {
+  transform: translateX(0);
+}
+
+.photo-discovery--side-crop img {
+  object-position: 50% 42%;
+}
+
+.photo-discovery--tiny-subject {
+  top: 47%;
+  right: 15%;
+  width: 7.5rem;
+  aspect-ratio: 1;
+  transform: translateY(0.8rem) rotate(2deg);
+}
+
+.photo-discovery--tiny-subject.is-visible {
+  transform: rotate(2deg);
+}
+
+.photo-discovery--edge-memory {
+  bottom: 6vh;
+  left: -3.5vw;
+  width: min(24vw, 19rem);
+  aspect-ratio: 1;
+  transform: translateX(-2rem) rotate(-1.2deg);
+}
+
+.photo-discovery--edge-memory.is-visible {
+  transform: rotate(-1.2deg);
+}
+
+@media (max-width: 760px) {
+  .contradiction-photo--surface {
+    top: 28%;
+    left: 48%;
+    width: 27vw;
+    height: 25vh;
+  }
+
+  .contradiction-photo--remainder {
+    right: 2vw;
+    bottom: 6%;
+    width: 31vw;
+    height: 21vh;
+  }
+
+  .brain-observation-fragment {
+    top: 46%;
+    left: 5vw;
+    width: 47vw;
+  }
+
+  .diary-fragment--01 {
+    top: -10rem;
+    width: 40%;
+  }
+
+  .diary-fragment--02 {
+    top: -11.5rem;
+    left: 27%;
+    width: 45%;
+  }
+
+  .diary-fragment--03 {
+    top: -9.5rem;
+    width: 38%;
+  }
+
+  .received-material {
+    left: 4vw;
+    bottom: 5rem;
+    width: 42vw;
+  }
+
+  .photo-discovery--corner {
+    top: 12vh;
+    right: 4vw;
+    width: 48vw;
+  }
+
+  .photo-discovery--found-print {
+    bottom: 7vh;
+    left: 5vw;
+    width: 55vw;
+    max-height: 68vh;
+  }
+
+  .photo-discovery--under-interface {
+    top: 24vh;
+    left: 31vw;
+    width: 53vw;
+  }
+
+  .photo-discovery--side-crop {
+    top: 13vh;
+    right: -9vw;
+    width: 77vw;
+    height: 60vh;
+  }
+
+  .photo-discovery--tiny-subject {
+    top: 51%;
+    right: 9%;
+    width: 6.8rem;
+  }
+
+  .photo-discovery--edge-memory {
+    bottom: 8vh;
+    left: -8vw;
+    width: 57vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contradiction-photo,
+  .photo-discovery,
+  .photo-discovery.is-visible,
+  .has-brain-motion .brain-observation-fragment.is-visible {
+    transition: none;
+    transform: none;
+  }
+}

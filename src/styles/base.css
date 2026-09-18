@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-system);
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-width: 20rem;
+  background: var(--color-paper);
+  overflow-x: hidden;
+}
+
+body::before {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-image:
+    repeating-radial-gradient(circle at 20% 30%, transparent 0 2px, rgb(20 18 14 / 4%) 2.5px 3px),
+    repeating-linear-gradient(94deg, transparent 0 5px, rgb(255 255 255 / 3%) 5px 6px);
+  content: "";
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+button[hidden],
+[hidden] {
+  display: none !important;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+dl,
+dd,
+ol {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper-bright);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+main {
+  transition: transform 180ms ease;
+}
+
+body.is-misbehaving main {
+  transform: rotate(0.12deg) scale(0.998);
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: var(--space-4);
+  left: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-ink);
+  color: var(--color-paper-bright);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}

@@ -1,0 +1,274 @@
+.site-audio-toggle {
+  position: fixed;
+  right: clamp(0.75rem, 1.7vw, 1.75rem);
+  top: clamp(0.75rem, 1.7vw, 1.5rem);
+  z-index: 1200;
+  display: grid;
+  width: 2.55rem;
+  height: 2.55rem;
+  place-items: center;
+  align-items: center;
+  padding: 0;
+  border: 1px solid rgba(239, 231, 214, 0.3);
+  border-radius: 50%;
+  background: rgba(20, 19, 16, 0.82);
+  color: #eee6d5;
+  box-shadow: 0 0.45rem 1.4rem rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, opacity 160ms ease;
+}
+
+.site-audio-toggle:hover,
+.site-audio-toggle:focus-visible {
+  border-color: rgba(239, 231, 214, 0.72);
+  background: rgba(20, 19, 16, 0.94);
+}
+
+.site-audio-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.site-audio-toggle:disabled {
+  cursor: default;
+  opacity: 0.48;
+}
+
+.site-audio-toggle__icon {
+  width: 1.18rem;
+  height: 1.18rem;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.55;
+}
+
+.site-audio-toggle__speaker {
+  fill: currentColor;
+  stroke: none;
+}
+
+.site-audio-toggle__slash {
+  stroke-width: 1.8;
+}
+
+.site-audio-toggle[data-audio-state="on"] .site-audio-toggle__slash,
+.site-audio-toggle:not([data-audio-state="on"]) .site-audio-toggle__wave {
+  display: none;
+}
+
+.site-audio-toggle__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-shell-page > .site-audio-toggle {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.serious-compact-page .site-audio-toggle,
+body.serious-page .site-audio-toggle {
+  border-color: rgba(29, 27, 23, 0.28);
+  background: rgba(241, 236, 224, 0.9);
+  color: #201e1a;
+  box-shadow: 0 0.45rem 1.4rem rgba(43, 38, 30, 0.12);
+}
+
+.serious-compact-page .site-audio-toggle:hover,
+.serious-compact-page .site-audio-toggle:focus-visible,
+body.serious-page .site-audio-toggle:hover,
+body.serious-page .site-audio-toggle:focus-visible {
+  border-color: rgba(29, 27, 23, 0.64);
+  background: rgba(247, 243, 234, 0.98);
+}
+
+@media (max-width: 640px) {
+  .site-audio-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-audio-toggle {
+    transition: none;
+  }
+}
+
+.has-audio-gate {
+  overflow: hidden;
+}
+
+.has-audio-gate .site-audio-toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-audio-gate {
+  position: fixed;
+  z-index: 2400;
+  inset: 0;
+  display: grid;
+  min-height: 100svh;
+  padding: clamp(1.25rem, 4vw, 4.5rem);
+  overflow: hidden;
+  place-items: center;
+  background:
+    radial-gradient(circle at 78% 24%, rgba(105, 66, 50, 0.2), transparent 31%),
+    radial-gradient(circle at 18% 78%, rgba(80, 38, 51, 0.18), transparent 34%),
+    #171716;
+  color: #eee7d7;
+  opacity: 1;
+  transition: opacity 280ms ease;
+}
+
+.site-audio-gate::before {
+  position: absolute;
+  inset: -30%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  content: "";
+  opacity: 0.075;
+  pointer-events: none;
+  transform: rotate(4deg);
+}
+
+.site-audio-gate.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-audio-gate__panel {
+  position: relative;
+  width: min(57rem, 100%);
+  padding: clamp(1.5rem, 3.5vw, 3rem) 0 clamp(1.7rem, 4vw, 3.4rem);
+  border-block: 1px solid rgba(238, 231, 215, 0.2);
+}
+
+.site-audio-gate__coordinate {
+  margin: 0 0 clamp(2.2rem, 6vh, 4.5rem);
+  color: rgba(238, 231, 215, 0.5);
+  font: 700 clamp(0.55rem, 0.72vw, 0.68rem)/1 Arial, Helvetica, sans-serif;
+  letter-spacing: 0.18em;
+}
+
+.site-audio-gate h1 {
+  max-width: 9.5em;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.15rem, 7.3vw, 7.4rem);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.82;
+}
+
+.site-audio-gate__title-mobile {
+  display: none;
+}
+
+.site-audio-gate__chinese {
+  margin: clamp(1.5rem, 3.5vh, 2.6rem) 0 0;
+  font-family: var(--font-kankan-cn-personal, "LXGW WenKai", "Kaiti SC", serif);
+  font-size: clamp(1.45rem, 2.5vw, 2.2rem);
+  line-height: 1.25;
+}
+
+.site-audio-gate__choices {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: clamp(3rem, 8vh, 6rem);
+}
+
+.site-audio-gate__choices button {
+  min-height: 3rem;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid rgba(238, 231, 215, 0.34);
+  background: transparent;
+  color: #eee7d7;
+  font-family: var(--font-kankan-cn-system, Arial, sans-serif);
+  font-size: clamp(0.78rem, 1.1vw, 0.94rem);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.site-audio-gate__choices button:first-child {
+  background: #eee7d7;
+  color: #171716;
+}
+
+.site-audio-gate__choices button:hover,
+.site-audio-gate__choices button:focus-visible {
+  border-color: #eee7d7;
+}
+
+.site-audio-gate__choices button:first-child:hover,
+.site-audio-gate__choices button:first-child:focus-visible {
+  background: #fff9eb;
+}
+
+.site-audio-gate__choices button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .site-audio-gate {
+    padding: 1rem;
+  }
+
+  .site-audio-gate__panel {
+    padding-block: 1.4rem 1.6rem;
+  }
+
+  .site-audio-gate__coordinate {
+    margin-bottom: clamp(3rem, 9vh, 5rem);
+  }
+
+  .site-audio-gate h1 {
+    font-size: clamp(2.65rem, 13.8vw, 3.8rem);
+    line-height: 0.86;
+  }
+
+  .site-audio-gate__title-desktop {
+    display: none;
+  }
+
+  .site-audio-gate__title-mobile {
+    display: inline;
+  }
+
+  .site-audio-gate__chinese {
+    margin-top: 1.5rem;
+    font-size: clamp(1.4rem, 7vw, 1.9rem);
+  }
+
+  .site-audio-gate__choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: clamp(3.5rem, 12vh, 6rem);
+  }
+
+  .site-audio-gate__choices button {
+    padding-inline: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-audio-gate,
+  .site-audio-gate__choices button {
+    transition: none;
+  }
+}

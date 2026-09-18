@@ -1,0 +1,264 @@
+@font-face {
+  font-family: "Kankan WenKai Voice";
+  src: url("../../public/fonts/kankan-voice/lxgw-wenkai-regular-site-subset.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --font-kankan-cn: "Kankan WenKai Voice", Georgia, "Times New Roman", serif;
+  --font-kankan-cn-system: "Kankan WenKai Voice", Arial, "Helvetica Neue", sans-serif;
+  --font-kankan-cn-note: "Kankan WenKai Voice", "Kaiti SC", KaiTi, serif;
+}
+
+/* The local face contains Chinese glyphs and punctuation only. Latin letters
+   continue through each page's existing editorial stack. */
+
+/* Homepage prototype + approved Opening */
+.opening__annotation,
+.title-drop__annotation,
+.first-reveal__copy .body-copy,
+.section-intro .editorial-heading,
+.fragment-card__value,
+.interruption__annotation,
+.interruption__replacement,
+.interruption__aside,
+.worlds__header .editorial-heading,
+.worlds__header .annotation,
+.world-door__hook,
+.world-door__fragment,
+.manual-status,
+.quiet-line,
+.black-and-white__copy .editorial-heading,
+.ending__copy .annotation,
+.consequence__message,
+.consequence__sub,
+.opening > .interruption,
+.cover__objection {
+  font-family: var(--font-kankan-cn);
+  font-synthesis: none;
+}
+
+.interruption__replacement,
+.quiet-line,
+.black-and-white__copy .editorial-heading {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  letter-spacing: -0.015em;
+}
+
+/* Five Worlds lobby */
+.lobby__intro h1,
+.lobby__status {
+  font-family: var(--font-kankan-cn);
+  font-synthesis: none;
+}
+
+.lobby__intro h1 {
+  font-size: clamp(2.15rem, 3.65vw, 4rem);
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+/* Contradictions Allowed */
+.truth h2,
+.accumulation__attitude,
+.incomplete__closing {
+  font-family: var(--font-kankan-cn);
+  font-synthesis: none;
+}
+
+.truth h2 { letter-spacing: -0.018em; }
+.truth--cold h2 { font-size: clamp(2.25rem, 4.5vw, 4rem); line-height: 1.12; }
+.truth--outgoing h2 { font-size: clamp(2.15rem, 4vw, 3.75rem); line-height: 1.13; }
+.truth--warm h2 { font-size: clamp(1.85rem, 3vw, 3.25rem); line-height: 1.25; }
+.truth--alone h2 { font-size: clamp(2.3rem, 4.3vw, 4rem); line-height: 1.15; }
+.accumulation__attitude { letter-spacing: 0; }
+.incomplete__closing { letter-spacing: -0.018em; }
+.incomplete__closing span { font-size: clamp(1.4rem, 2.35vw, 2.45rem); }
+.incomplete__closing strong { font-size: clamp(2.65rem, 5vw, 4rem); line-height: 1.16; }
+
+/* How My Brain Works */
+.why-opening__quote,
+.decision h2,
+.decision--life__facts,
+.attention-drift__observe h2,
+.attention-drift__replay,
+.attention-drift__connection {
+  font-family: var(--font-kankan-cn);
+  font-synthesis: none;
+}
+
+.why-opening__quote { font-size: clamp(2.15rem, 4vw, 3.75rem); letter-spacing: -0.018em; line-height: 1.24; }
+.decision h2 { letter-spacing: -0.022em; }
+.decision--life h2 { font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1.12; }
+.attention-drift__observe h2 { font-size: clamp(2.6rem, 5vw, 4rem); letter-spacing: -0.022em; line-height: 1.16; }
+.attention-drift__replay blockquote { font-size: clamp(1.8rem, 3.15vw, 3.25rem); letter-spacing: -0.012em; }
+.attention-drift__connection { font-size: clamp(2.8rem, 5vw, 4rem); letter-spacing: -0.018em; }
+
+/* Things Worth Keeping */
+.keeper-hero__premise,
+.hero-artifact figcaption p,
+.hero-artifact figcaption small,
+.diary-drawer__copy h2,
+.diary-drawer__copy > p:last-child,
+.present-life__copy h2,
+.present-life__plain,
+.present-life__future,
+.received__echoes,
+.received__before,
+.received__copy h2,
+.received__after,
+.passed-on__copy h2,
+.unresolved-note,
+.artifact-dialog__top button,
+.artifact-dialog__note {
+  font-family: var(--font-kankan-cn);
+  font-synthesis: none;
+}
+
+.keeper-hero__premise,
+.hero-artifact figcaption p,
+.diary-drawer__copy > p:last-child,
+.present-life__future,
+.received__before,
+.received__after,
+.artifact-dialog__note { letter-spacing: 0; }
+
+.diary-drawer__copy h2,
+.present-life__copy h2,
+.received__copy h2,
+.passed-on__copy h2 {
+  font-size: clamp(2.6rem, 4.8vw, 4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.14;
+}
+
+.present-life__plain { font-size: clamp(2rem, 3.3vw, 3rem); letter-spacing: -0.012em; }
+.received__echoes { letter-spacing: -0.012em; }
+.unresolved-note { font-size: clamp(1.75rem, 3vw, 2.75rem); letter-spacing: -0.012em; line-height: 1.42; }
+
+/* User Manual: Chinese subject voice inside an English report system. */
+.report-cover__chinese,
+.report-cover__issuer strong,
+.preference-statement h2,
+.preference-sequence strong,
+.issue-statement > p,
+.refusal-stack,
+.diagnostic-result,
+.impression-engine__inputs p,
+.impression-engine__result h2,
+.system-status__release strong {
+  font-family: var(--font-kankan-cn);
+  font-synthesis: none;
+}
+
+.report-cover__chinese { font-size: clamp(1.25rem, 2vw, 2rem); letter-spacing: 0; }
+.preference-statement h2,
+.impression-engine__result h2 { font-size: clamp(2.5rem, 4.6vw, 4rem); letter-spacing: -0.02em; line-height: 1.14; }
+.issue-statement > p { font-size: clamp(1.8rem, 3.5vw, 3.4rem); letter-spacing: -0.014em; line-height: 1.24; }
+.refusal-stack,
+.system-status__release strong { letter-spacing: 0; }
+
+/* Playground: system chrome stays untouched; earned Chinese events change voice. */
+.event-copy h2,
+.event-copy__detail,
+.event-result strong,
+.question-event__prompt h2,
+.question-event__choices button,
+.question-event__answer strong,
+.adulthood-event h2,
+.adulthood-event__review strong,
+.animal-event h2,
+.animal-event__self,
+.animal-event__animals button,
+.animal-event__reasoning,
+.cat-event__speech,
+.cat-event__response strong,
+.cat-event__response p,
+.non-event,
+.visitor-message-entrance,
+.visitor-trace-status {
+  font-family: var(--font-kankan-cn);
+  font-synthesis: none;
+}
+
+.event-copy h2,
+.question-event__prompt h2,
+.adulthood-event h2,
+.animal-event h2,
+.cat-event__speech { font-size: clamp(2.75rem, 5vw, 4rem); letter-spacing: -0.018em; line-height: 1.15; }
+.event-stage--edge .event-copy h2,
+.event-stage--system .event-copy h2 { font-size: clamp(2.4rem, 4.3vw, 3.75rem); }
+.event-result strong,
+.question-event__answer strong,
+.adulthood-event__review strong,
+.cat-event__response strong { font-size: clamp(1.35rem, 2.25vw, 2.35rem); letter-spacing: 0; }
+.event-copy__detail,
+.cat-event__response p { letter-spacing: 0; }
+
+/* Preserve the established Latin voice inside mixed-language elements. */
+.first-reveal__copy .body-copy,
+.interruption__aside,
+.world-door__hook,
+.world-door__fragment,
+.manual-status,
+.consequence__sub,
+.lobby__status,
+.accumulation__attitude,
+.diary-drawer__copy > p:last-child,
+.artifact-dialog__top button,
+.diagnostic-result,
+.impression-engine__inputs p,
+.visitor-message-entrance,
+.visitor-trace-status {
+  font-family: var(--font-kankan-cn-system);
+}
+
+.opening__annotation,
+.title-drop__annotation,
+.interruption__annotation,
+.ending__copy .annotation,
+.opening > .interruption,
+.cover__objection,
+.hero-artifact figcaption small,
+.unresolved-note {
+  font-family: var(--font-kankan-cn-note);
+}
+
+@media (max-width: 760px) {
+  .lobby__intro h1 { font-size: clamp(2rem, 9.5vw, 3rem); line-height: 1.16; }
+
+  .truth--cold h2,
+  .truth--outgoing h2,
+  .truth--alone h2,
+  .incomplete__closing strong,
+  .why-opening__quote,
+  .decision--life h2,
+  .attention-drift__observe h2,
+  .attention-drift__connection,
+  .diary-drawer__copy h2,
+  .present-life__copy h2,
+  .received__copy h2,
+  .passed-on__copy h2,
+  .preference-statement h2,
+  .impression-engine__result h2,
+  .event-copy h2,
+  .question-event__prompt h2,
+  .adulthood-event h2,
+  .animal-event h2,
+  .cat-event__speech,
+  .event-stage--edge .event-copy h2,
+  .event-stage--system .event-copy h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.18;
+  }
+
+  .truth--warm h2,
+  .issue-statement > p { font-size: clamp(1.75rem, 8vw, 2.5rem); line-height: 1.24; }
+  .unresolved-note,
+  .present-life__plain { font-size: clamp(1.65rem, 7vw, 2.25rem); }
+  .interruption__replacement,
+  .quiet-line,
+  .black-and-white__copy .editorial-heading { font-size: clamp(1.8rem, 8vw, 2.75rem); line-height: 1.35; }
+}

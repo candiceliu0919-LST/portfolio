@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+
+  /* Color comes from life. UI stays neutral. */
+  --color-paper: #f1efe9;
+  --color-paper-bright: #faf9f5;
+  --color-ink: #10100f;
+  --color-muted: #686661;
+  --color-line: #c5c1b8;
+  --color-soft: #dfdcd4;
+  --color-night: #171715;
+
+  --font-editorial: Georgia, "Times New Roman", Times, serif;
+  --font-system: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-annotation: Georgia, "Times New Roman", Times, serif;
+
+  --text-xs: clamp(0.68rem, 0.64rem + 0.16vw, 0.78rem);
+  --text-sm: clamp(0.82rem, 0.78rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.16rem);
+  --text-lg: clamp(1.35rem, 1.12rem + 0.9vw, 2rem);
+  --text-xl: clamp(2rem, 1.45rem + 2.2vw, 4rem);
+  --text-display: clamp(3.5rem, 1.6rem + 8vw, 10rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-scene: clamp(7rem, 16vw, 15rem);
+
+  --page-gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --content-max: 92rem;
+  --measure: 42rem;
+  --line-thin: 1px solid var(--color-line);
+  --shadow-paper: 0 1.5rem 4rem rgb(20 18 14 / 12%);
+}

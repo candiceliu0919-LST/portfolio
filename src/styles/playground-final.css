@@ -1,0 +1,183 @@
+/* PLAYGROUND FINAL PATCH — interaction consequences, daily limit, note encounter. */
+
+.playtime-over {
+  display: grid;
+  align-content: center;
+  min-height: min(62vh, 34rem);
+  width: min(100%, 64rem);
+}
+
+.playtime-over > span,
+.playtime-over small {
+  color: var(--play-rose);
+  font: 700 0.61rem/1.3 Arial, sans-serif;
+  letter-spacing: 0.16em;
+}
+
+.playtime-over h2 {
+  max-width: 13ch;
+  margin: 1.2rem 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.7rem, 8vw, 8.5rem);
+  font-weight: 400;
+  line-height: 0.86;
+  letter-spacing: -0.065em;
+}
+
+.playtime-over p {
+  max-width: 24rem;
+  margin: clamp(2.2rem, 5vh, 4rem) 0 0 auto;
+  color: var(--play-ivory);
+  font-family: var(--font-kankan-cn, Georgia, serif);
+  font-size: clamp(1.35rem, 2.3vw, 2.3rem);
+  line-height: 1.42;
+}
+
+.playtime-over small {
+  display: block;
+  margin-top: 1.4rem;
+  color: color-mix(in srgb, var(--play-ivory) 48%, transparent);
+}
+
+.animal-review-form {
+  grid-column: 1 / -1;
+  display: none;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--play-line);
+}
+
+.animal-review-form.is-visible { display: grid; }
+
+.animal-review-form label {
+  grid-column: 1 / -1;
+  color: var(--play-rose);
+  font: 700 0.59rem/1.4 Arial, sans-serif;
+  letter-spacing: 0.15em;
+}
+
+.animal-review-form label span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--play-ivory);
+  font-family: var(--font-kankan-cn, Georgia, serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.animal-review-form input {
+  min-width: 0;
+  padding: 0.8rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--play-line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--play-ivory);
+  outline: none;
+  font-family: var(--font-kankan-cn, Georgia, serif);
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+}
+
+.animal-review-form input::placeholder {
+  color: color-mix(in srgb, var(--play-ivory) 30%, transparent);
+}
+
+.animal-review-form button {
+  align-self: end;
+  min-height: 2.8rem;
+  padding: 0.7rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--play-ivory);
+  cursor: pointer;
+  font: 700 0.59rem/1.2 Arial, sans-serif;
+  letter-spacing: 0.14em;
+}
+
+.animal-review-form button:hover,
+.animal-review-form button:focus-visible { color: var(--play-rose); }
+
+.animal-review-feedback {
+  grid-column: 1 / -1;
+  min-height: 1rem;
+  color: var(--play-rose);
+  font: 700 0.59rem/1.4 Arial, sans-serif;
+  letter-spacing: 0.14em;
+}
+
+/* The stranger's message is the event; the visitor's own note becomes a record. */
+.visitor-note-event--encounter {
+  grid-template-columns: minmax(11rem, 0.32fr) minmax(0, 1.68fr);
+  gap: clamp(2rem, 7vw, 8rem);
+}
+
+.visitor-note-own {
+  align-self: end;
+  color: color-mix(in srgb, var(--play-ivory) 58%, transparent);
+}
+
+.visitor-note-own p {
+  font-size: clamp(0.95rem, 1.35vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.visitor-note-own strong { color: inherit; }
+.visitor-note-own > span {
+  color: var(--play-rose);
+  font-size: 0.52rem;
+}
+
+.stranger-note > span {
+  margin-bottom: clamp(1.2rem, 3vh, 2rem);
+  color: color-mix(in srgb, var(--play-ivory) 46%, transparent);
+}
+
+.stranger-note blockquote {
+  color: var(--play-ivory);
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.stranger-note blockquote.is-leaving {
+  opacity: 0;
+  transform: translateY(-0.5rem);
+}
+
+.stranger-note blockquote.is-entering {
+  animation: note-pick-up 380ms ease both;
+}
+
+@keyframes note-pick-up {
+  from { opacity: 0; transform: translateY(0.45rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 760px) {
+  .playtime-over { min-height: auto; }
+  .playtime-over h2 { font-size: clamp(3.2rem, 16vw, 5.2rem); }
+  .playtime-over p {
+    margin-left: 0;
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+  }
+
+  .animal-review-form { grid-template-columns: 1fr; }
+  .animal-review-form button { justify-self: end; }
+
+  .visitor-note-event--encounter {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .visitor-note-own { order: 2; }
+  .stranger-note { order: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stranger-note blockquote,
+  .stranger-note blockquote.is-entering {
+    animation: none;
+    transition-duration: 0.01ms;
+  }
+}
